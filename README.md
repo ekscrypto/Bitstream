@@ -1,8 +1,13 @@
 # Bitstream
 Swift API to easily pack/unpack individual bits as NSData
 
+<p>
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Swift4-compatible-orange.svg?style=flat" alt="Swift 4 compatible" /></a>
+<a href="https://raw.githubusercontent.com/ekscrypto/Bitstream/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
+</p>
+
 Dependencies:
-    Bitter - https://github.com/uraimo/Bitter
+- Bitter: https://github.com/uraimo/Bitter
 
 ## Usage
 
