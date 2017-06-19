@@ -9,7 +9,7 @@
 import Foundation
 import Bitter
 
-class Bitstream : NSObject {
+public class Bitstream : NSObject {
 
     private var data : Data
 
@@ -20,11 +20,11 @@ class Bitstream : NSObject {
     private var writeBuffer : UInt8 = 0
     private var bitsLeftInWriteBuffer : Int = 8
 
-    init(data: Data ) {
+    public init(data: Data ) {
         self.data = data
     }
 
-    func getNextBit() -> UInt8! {
+    public func getNextBit() -> UInt8! {
         if bitsLeftInReadBuffer == 0 && readByteIndex < data.count {
             readBuffer = data[readByteIndex]
             bitsLeftInReadBuffer = 8
@@ -39,7 +39,7 @@ class Bitstream : NSObject {
         return nil
     }
 
-    func getNextBits(_ bitsToRead : UInt8 ) -> UInt64! {
+    public func getNextBits(_ bitsToRead : UInt8 ) -> UInt64! {
         if bitsToRead > 64 {
             return nil
         }
@@ -58,7 +58,7 @@ class Bitstream : NSObject {
         return combinedValue
     }
 
-    func setNextBit(_ bit : UInt8 ) {
+    public func setNextBit(_ bit : UInt8 ) {
         if( bitsLeftInWriteBuffer == 0 ) {
             data.append(writeBuffer)
             writeBuffer = 0
@@ -68,7 +68,7 @@ class Bitstream : NSObject {
         bitsLeftInWriteBuffer -= 1
     }
 
-    func setNextBits(_ bitsToWrite : UInt8, from bits: UInt64) {
+    public func setNextBits(_ bitsToWrite : UInt8, from bits: UInt64) {
         if( bitsToWrite > 64 ) {
             return
         }
@@ -83,13 +83,13 @@ class Bitstream : NSObject {
         }
     }
 
-    func finalizedData() -> Data {
+    public func finalizedData() -> Data {
         setNextBits(UInt8(bitsLeftInWriteBuffer), from: 0)
         let finalizedData = data
         return finalizedData
     }
 
-    func dump() {
+    public func dump() {
         var abort = false
         var bits = ""
         while abort == false {

@@ -1,0 +1,12 @@
+{
+  "autoPin": true,
+  "pins": [
+    {
+      "package": "Bitter",
+      "reason": null,
+      "repositoryURL": "https://github.com/ekscrypto/Bitter",
+      "version": "2.0.7"
+    }
+  ],
+  "version": 1
+}
