@@ -85,6 +85,9 @@ public class Bitstream : NSObject {
 
     public func finalizedData() -> Data {
         setNextBits(UInt8(bitsLeftInWriteBuffer), from: 0)
+        if( bitsLeftInWriteBuffer != 8 ) {
+            data.append(writeBuffer)
+        }
         let finalizedData = data
         return finalizedData
     }
