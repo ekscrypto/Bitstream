@@ -3,7 +3,7 @@
 //  MIT License
 //
 //  Created by Dave Poirier on 2017-06-19.
-//  Copyright © 2017 Soft.Io.
+//  Copyright © 2017 Dave Poirier.
 //
 
 import Foundation
