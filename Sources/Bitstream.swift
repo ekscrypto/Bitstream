@@ -73,7 +73,7 @@ class Bitstream : NSObject {
             return
         }
 
-        var shiftedBits = bits << (64-bitsToWrite)
+        var shiftedBits = bits << (64-bitsToWrite.toU64)
         var bitsLeftToWrite = bitsToWrite
         while bitsLeftToWrite > 0 {
             let bit = shiftedBits >> 63
