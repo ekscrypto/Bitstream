@@ -9,16 +9,16 @@
 import Foundation
 import Bitter
 
-public class Bitstream : NSObject {
+public class Bitstream: NSObject {
 
-    private var data : Data
+    private var data: Data
 
-    private var bitsLeftInReadBuffer : Int = 0
-    private var readByteIndex : Int = 0
-    private var readBuffer : UInt8 = 0
+    private var bitsLeftInReadBuffer: Int = 0
+    private var readByteIndex: Int = 0
+    private var readBuffer: UInt8 = 0
 
-    private var writeBuffer : UInt8 = 0
-    private var bitsLeftInWriteBuffer : Int = 8
+    private var writeBuffer: UInt8 = 0
+    private var bitsLeftInWriteBuffer: Int = 8
 
     public init(data: Data ) {
         self.data = data
@@ -39,13 +39,13 @@ public class Bitstream : NSObject {
         return nil
     }
 
-    public func getNextBits(_ bitsToRead : UInt8 ) -> UInt64! {
+    public func getNextBits(_ bitsToRead: UInt8 ) -> UInt64! {
         if bitsToRead > 64 {
             return nil
         }
 
         var bitsLeft = bitsToRead
-        var combinedValue : UInt64 = 0
+        var combinedValue: UInt64 = 0
         while bitsLeft > 0 {
             let bit = getNextBit()
             if bit == nil {
@@ -58,7 +58,7 @@ public class Bitstream : NSObject {
         return combinedValue
     }
 
-    public func setNextBit(_ bit : UInt8 ) {
+    public func setNextBit(_ bit: UInt8 ) {
         if( bitsLeftInWriteBuffer == 0 ) {
             data.append(writeBuffer)
             writeBuffer = 0
@@ -68,12 +68,12 @@ public class Bitstream : NSObject {
         bitsLeftInWriteBuffer -= 1
     }
 
-    public func setNextBits(_ bitsToWrite : UInt8, from bits: UInt64) {
+    public func setNextBits(_ bitsToWrite: UInt8, from bits: UInt64) {
         if( bitsToWrite > 64 ) {
             return
         }
 
-        var shiftedBits = bits << (64-bitsToWrite.toU64)
+        var shiftedBits = bits << (64 - bitsToWrite.toU64)
         var bitsLeftToWrite = bitsToWrite
         while bitsLeftToWrite > 0 {
             let bit = shiftedBits >> 63
