@@ -25,7 +25,7 @@
 /* Begin PBXFileReference section */
 		OBJ_13 /* Bitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitter.swift; sourceTree = "<group>"; };
 		OBJ_15 /* Bitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Bitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_16 /* Bitstream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bitstream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_16 /* Bitstream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Bitstream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_8 /* Bitstream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitstream.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +152,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					OBJ_17 = {
+						LastSwiftMigration = 0900;
+					};
+					OBJ_24 = {
+						LastSwiftMigration = 0900;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Bitstream" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -216,6 +224,8 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Bitter;
 			};
 			name = Debug;
@@ -237,6 +247,8 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Bitter;
 			};
 			name = Release;
@@ -258,6 +270,8 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Bitstream;
 			};
 			name = Debug;
@@ -279,6 +293,8 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Bitstream;
 			};
 			name = Release;
