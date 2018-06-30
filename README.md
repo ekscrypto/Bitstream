@@ -23,7 +23,7 @@ Dependencies:
 ## Usage
 
 ### Writing
-    let stream = Bitstream(data: Data())
+    let stream = Bitstream()
     stream.setNextBit(1)
     stream.setNextbit(0)
     stream.setNextBit(1)
@@ -41,7 +41,7 @@ Dependencies:
 ### Reading
 
     // streamData == Data() with content: 01 23 45 67 89 AB CD EF
-    let stream = Bitstream.init(data: streamData)
+    let stream = Bitstream(data: streamData)
     let v1 = stream.getNextBits(4)
     let v2 = stream.getNextBits(8)
     let v3 = stream.getNextBits(3)
